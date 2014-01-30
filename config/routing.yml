@@ -1,0 +1,3 @@
+index:
+  path: /
+  action: Front:indexAction

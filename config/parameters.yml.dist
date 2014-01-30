@@ -1,0 +1,7 @@
+database:
+  host: localhost
+  dbname: dbname
+  user: username
+  pass: password
+
+site: .sitename
