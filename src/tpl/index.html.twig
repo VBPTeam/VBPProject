@@ -1,6 +1,10 @@
 {% extends 'base.html.twig' %}
 
 {% block css %}
+    <link href='/web/css/style.css' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Artifika|Montserrat+Alternates:700|Hammersmith+One|Nunito:700' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+    <script src='/web/js/slider.js'></script>
 {% endblock %}
 
 {% block js %}
@@ -8,8 +12,195 @@
 
 {% block pageBody %}
 
-{% block content %}
+    <div class='header'>
+        <div class='header_logo'>
+        </div>
+        <div class='header_link'>
+            <ul>
+                <li><a href='#' class="active">Главная</a></li>
+                <li><a href='#'>О прокте</a></li>
+                <li><a href='#'>Ссылка</a></li>
+                <li><a href='#'>Ссылка</a></li>
+                <li><a href='#'>Ссылка</a></li>
+                <li><a href='#'>Ссылка</a></li>
+            </ul>
+        </div>
+        <div class='header_logIn'>
+            <span class="input"><a href="#">Войти</a></span>
+            <span class="reg"><a href="#">Зарегестрироваться</a></span>
+        </div>
+    </div>
+    <div class='company_info'>
+        <div class='company_info_header'>
+            <span>Карта</span>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div class='content_wraper'>
+        <div class='menu_info'>
+            <div class='info_header'>
+                <span>Информация</span>
+            </div>
+            <div id='info_content'></div>
+        </div>
+        <div class='map_wraper'>
+            <div class='map_border'>
+                <div id='map_canvas'></div>
+            </div>
+        </div>
+        <div class='menu_search'>
+            <div class='search_header'>
+                <span>Поиск</span>
+            </div>
+            <div class="search_form">
+                <form name="search_from" action="#" method="post">
+                    <input type="text" name="search" placeholder="Введите имя"/><br />
+                    <span>Пункты фильтра</span><br />
+                    <input type="checkbox" name="punkt" value="rad1"/>
+                    <span>Пункт</span><br />
+                    <input type="checkbox" name="punkt" value="rad1"/>
+                    <span>Пункт</span><br />
+                    <input type="checkbox" name="punkt" value="rad1"/>
+                    <span>Пункт</span><br />
+                    <span>Возраст</span><br />
+                    <input type="checkbox" name="punkt" value="rad1"/>
+                    <span>10-14</span><br />
+                    <input type="checkbox" name="punkt" value="rad1"/>
+                    <span>14-18</span><br />
+                    <input type="checkbox" name="punkt" value="rad1"/>
+                    <span>18 и более</span><br />
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class='top_VBPuser'>
+        <div class='top_user_border'><img src="/web/images/top_100500.png" alt="top" /></div>
+        <div class='main_VBPuser'>
+            <div class='arrow' id='butt-arrow-left'><img src="/web/images/top_left.png" alt="Top_left" class="top_left"/></div>
+            <div class="top_center">
+                <ul id='slider'>
+                    <li><div class='Slider_VBPUser'>0</div></li>
+                    <li><div class='Slider_VBPUser'>1</div></li>
+                    <li><div class='Slider_VBPUser'>2</div></li>
+                    <li><div class='Slider_VBPUser'>3</div></li>
+                    <li><div class='Slider_VBPUser'>4</div></li>
+                    <li><div class='Slider_VBPUser'>5</div></li>
+                    <li><div class='Slider_VBPUser'>6</div></li>
+                    <li><div class='Slider_VBPUser'>7</div></li>
+                    <li><div class='Slider_VBPUser'>8</div></li>
+                    <li><div class='Slider_VBPUser'>9</div></li>
+                </ul>
+            </div>
+            <div class='arrow' id='butt-arrow-right'><img src="/web/images/top_right.png" alt="Top_right" class="top_right"/></div>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div class='request'>
+        <div class='request_header'>
+            <span>Complaint</span>
+        </div>
+        <div class='request_text'>
+	    <span>
+	        Вас попытались обмануть или обманули? Напишите нам и Ваш обидчик окажется в списке мешенников
+			и о нем узнают все! Форма для заполнения заявки ниже.
+	    </span>
+        </div>
+        <div class='request_complaint_form'>
+            <form name="myform" method="post" action="#">
+                <table>
+                    <tr><td><span>Имя мошенника</span></td></tr>
+                    <tr><td><input type='text'></td></tr>
 
-{% endblock %}
+                    <tr><td><span>Ваше имя</span></td></tr>
+                    <tr><td><input type='text'></br></td></tr>
+                    <tr><td><span>Данные мошенника</span></td></tr>
+                    <tr><td><input type='text'></td></tr>
+                    <tr><td><span>Ваша почта</span></td></tr>
+                    <tr><td><input type='text'></td></tr>
+                    <tr><td><span>Скрин диалога с мошенником</span></td></tr>
+                    <tr><td><input type='text'></td></tr>
+                    <tr><td><span>Опишите что произошло ?</span></br></td></tr>
+                    <tr><td><textarea type='textarea' placeholder="Введите суть проишествия"></textarea></td></tr>
+                    <tr><td><input type='button' id='sendButton' value='Отправить'></td></tr>
+                </table>
+            </form>
+        </div>
+        <div class='request_logo'></div>
+    </div>
+    <div class="clear"></div>
+    <div class='footer'>
+
+        <p class="web">
+        <table>
+            <tr>
+                <td><img src="/web/images/google.jpg" alt="google" /></td>
+                <td><img src="/web/images/twitter.jpg" alt="twitter" /></td>
+                <td><img src="/web/images/facebook.jpg" alt="facebook" /></td>
+            </tr>
+        </table>
+        </p>
+        <p class="copirght">
+        <table>
+            <tr>
+                <td><img src="/web/images/top.jpg" alt="top" /></td>
+                <td>&copy;2013 VBP</td>
+            </tr>
+        </table>
+        </p>
+
+
+    </div>
+    <script>
+        var markersArr = [];//массив маркеров, которые будут выводиться в видимой области;
+        //функция инициализации;
+        function initialize() {
+
+            //опции карты
+            var mapOptions = {
+                zoom: 8,
+                center: new google.maps.LatLng(55.68808,37.57501),
+                mapTypeId: google.maps.MapTypeId.ROADMAP,
+                streetViewControl: false,
+                mapTypeControl: false,
+            };
+
+            //создаем карту с указанными опциями
+            var map = new google.maps.Map(document.getElementById('map_canvas'),mapOptions);
+
+            //массив который мы получим из колбэк функции;
+            var callBackMarkerArr = [{
+                position: new google.maps.LatLng(55.68808,37.57501),
+                map: map,
+                title: 'Информация о VBP<br>Имя:<br>Телефон',
+            }];
+            //добавляем маркеры и события на них
+            var showMarkets = function() {
+                for(i=0;i<callBackMarkerArr.length;i++) {
+                    markersArr[i] = new google.maps.Marker(callBackMarkerArr[i]);
+                    google.maps.event.addListener(markersArr[i], 'click', function(e) {
+                        var content = '<img id="vbpPhoto" src="images/anon.PNG"></img><br/>'+this.title +'<br/><a href="#">Подробнее</a>';
+                        var infoWindow = new google.maps.InfoWindow({
+                            content: content,
+                            position: this.position,
+                        })
+                        var info = document.getElementById('info_content');
+                        info.innerHTML = content;
+                    });
+                }
+            };showMarkets;
+
+            //добавляем события
+            google.maps.event.addListener(map,'bounds_changed',showMarkets);
+        }
+
+        //выводи карту
+        google.maps.event.addDomListener(window, 'load', initialize);
+
+        Slider({
+            right:document.getElementById('butt-arrow-right'),
+            left:document.getElementById('butt-arrow-left'),
+            slider:document.getElementById('slider')
+        })
+    </script>
 
 {% endblock %}
